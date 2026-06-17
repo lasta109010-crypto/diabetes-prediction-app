@@ -23,7 +23,7 @@ if st.button("Predict"):
 
     probability = model.predict_proba(input_data)[0][1]
     
-    st.write(f"Diabetes risk probability: {probability:.2%}")
+    st.write(f"Model risk score: {probability:.2%}")
     
     if probability >= 0.75:
         st.error("Higher risk - please consult a healthcare professional.")
