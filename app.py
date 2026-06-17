@@ -5,6 +5,12 @@ import joblib
 model = joblib.load("AI_diabetes_model.pkl")
 
 st.title("AI Diabetes Risk Assesment")
+st.markdown(
+    "Enter patient information below to receive an estimated diabetes risk score."
+)
+
+st.divider()
+
 
 pregnancies = st.number_input("Pregnancies", min_value=0)
 glucose = st.number_input("Glucose", min_value=0)
@@ -20,6 +26,8 @@ if st.button("Predict"):
         [[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, dpf, age]],
         columns=["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
     )
+     st.subheader("Assessment Results")
+   
 
     probability = model.predict_proba(input_data)[0][1]
     
@@ -33,5 +41,8 @@ if st.button("Predict"):
     
     else:
             st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
+    st.caption(
+    "Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
+)
     
    
