@@ -26,7 +26,8 @@ if st.button("Predict"):
         [[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, dpf, age]],
         columns=["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
     )
- st.subheader("Assessment Results")
+    st.subheader("Assessment Results")
+   
    
 
     probability = model.predict_proba(input_data)[0][1]
