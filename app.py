@@ -16,15 +16,18 @@ dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0)
 age = st.number_input("Age", min_value=0)
 
 if st.button("Predict"):
-    input_data = pd.DataFrame([[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, dpf, age]],
+    input_data = pd.DataFrame(
+        [[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, dpf, age]],
         columns=["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
     )
 
-   probability = model.predict_proba(input_data)[0][1]
+        probability = model.predict_proba(input_data)[0][1]
+    
+        st.write(f"Diabetes risk probability: {probability:.2%}")
+    
+        if probability >= 0.75:
+            st.error("Higher risk - please consult a healthcare professional.")
+        else:
+            st.success("Lower risk based on the entered values.")
 
-st.write(f"Diabetes risk probability: {probability:.2%}")
-
-if probability >= 0.75:
-    st.error("Higher risk — please consult a healthcare professional.")
-else:
-    st.success("Lower risk based on the entered values.")
+   
