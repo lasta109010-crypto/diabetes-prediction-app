@@ -26,8 +26,12 @@ if st.button("Predict"):
     st.write(f"Model risk score: {probability:.2%}")
     
     if probability >= 0.75:
-        st.error("Higher risk - please consult a healthcare professional.")
+          st.error("High diabetes risk detected. Please consult a healthcare professional.")
+  
+    elif probability >= 0.50:
+        st.warning("Moderate diabetes risk detected. Consider consulting a healthcare professional.")
+    
     else:
-        st.success("Lower risk based on the entered values.")
-
+            st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
+    
    
