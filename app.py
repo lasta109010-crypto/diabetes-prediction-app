@@ -21,13 +21,13 @@ if st.button("Predict"):
         columns=["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
     )
 
-probability = model.predict_proba(input_data)[0][1]
-
-st.write(f"Diabetes risk probability: {probability:.2%}")
-
-if probability >= 0.75:
-    st.error("Higher risk - please consult a healthcare professional.")
-else:
-    st.success("Lower risk based on the entered values.")
+    probability = model.predict_proba(input_data)[0][1]
+    
+    st.write(f"Diabetes risk probability: {probability:.2%}")
+    
+    if probability >= 0.75:
+        st.error("Higher risk - please consult a healthcare professional.")
+    else:
+        st.success("Lower risk based on the entered values.")
 
    
