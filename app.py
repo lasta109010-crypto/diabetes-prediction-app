@@ -13,7 +13,7 @@ model = joblib.load("AI_diabetes_model.pkl")
 
 st.title("AI Diabetes Risk Assesment")
 st.markdown(
-    "Enter patient information below to receive an estimated diabetes risk score."
+    "Enter patient information below to receive an estimated diabetes risk assesment."
 )
 
 st.divider()
