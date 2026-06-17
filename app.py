@@ -33,3 +33,5 @@ if st.button("Predict"):
         st.error("Higher risk — please consult a healthcare professional.")
     else:
         st.success("Lower risk based on the entered values.")
+
+        
