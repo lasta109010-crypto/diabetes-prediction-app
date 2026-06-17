@@ -4,7 +4,7 @@ import joblib
 
 model = joblib.load("AI_diabetes_model.pkl")
 
-st.title("AI Diabetes Risk Prediction")
+st.title("AI Diabetes Risk Assesment")
 
 pregnancies = st.number_input("Pregnancies", min_value=0)
 glucose = st.number_input("Glucose", min_value=0)
