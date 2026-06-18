@@ -40,23 +40,26 @@ if st.button("Predict"):
     probability = model.predict_proba(input_data)[0][1]
     
     st.write(f"Model risk score: {probability:.2%}")
-    
+  
 if probability >= 0.60:
-     st.error("High diabetes risk detected. Please consult a healthcare professional.")
+    st.error("High diabetes risk detected. Please consult a healthcare professional.")
 elif probability >= 0.40:
     st.warning("Moderate diabetes risk detected. Consider consulting a healthcare professional.")
-    
-    
-       
-   
-    
+  
 else:
+    
     st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
     st.caption(
-           
-       "Husni's Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
+    
+    "Husni's Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
 )
        
+    
+    
+  
+ 
+  
+  
        
        
        
