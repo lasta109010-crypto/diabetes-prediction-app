@@ -29,30 +29,30 @@ dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0)
 age = st.number_input("Age", min_value=0)
 
 if st.button("Predict"):
+
     input_data = pd.DataFrame(
         [[pregnancies, glucose, blood_pressure, skin_thickness, insulin, bmi, dpf, age]],
-        columns=["Pregnancies", "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI", "DiabetesPedigreeFunction", "Age"]
+        columns=["Pregnancies","Glucose","BloodPressure","SkinThickness","Insulin","BMI","DiabetesPedigreeFunction","Age"]
     )
+
     st.subheader("Assessment Results")
-   
-   
 
     probability = model.predict_proba(input_data)[0][1]
-    
+
     st.write(f"Model risk score: {probability:.2%}")
-  
-if probability >= 0.60:
-    st.error("High diabetes risk detected. Please consult a healthcare professional.")
-elif probability >= 0.40:
-    st.warning("Moderate diabetes risk detected. Consider consulting a healthcare professional.")
-  
-else:
-    
-    st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
+
+    if probability >= 0.60:
+        st.error("High diabetes risk detected. Please consult a healthcare professional.")
+
+    elif probability >= 0.40:
+        st.warning("Moderate diabetes risk detected. Consider consulting a healthcare professional.")
+
+    else:
+        st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
+
     st.caption(
-    
-    "Husni's Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
-)
+        "Husni's Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
+    )
        
     
     
