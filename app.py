@@ -52,10 +52,11 @@ elif probability >= 0.40:
     
 else:
     st.success("Low diabetes risk detected. Maintain a healthy lifestyle and regular checkups.")
-       st.caption(
+    st.caption(
            
        "Husni's Disclaimer: This tool is for educational purposes only and is not a medical diagnosis."
 )
+       
        
        
        
