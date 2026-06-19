@@ -1,13 +1,6 @@
 import streamlit as st
 import pandas as pd
 import joblib
-st.markdown("""
-<style>
-.stApp {
-    background-color: #F5F9FF;
-}
-</style>
-""", unsafe_allow_html=True)
 
 model = joblib.load("AI_diabetes_model.pkl")
 
